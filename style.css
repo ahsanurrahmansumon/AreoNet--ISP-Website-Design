@@ -1,0 +1,18 @@
+ body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #f9fafb; /* Light gray background */
+            background-image:
+                radial-gradient(at 47% 33%, hsl(220, 80%, 95%) 0, transparent 59%),
+                radial-gradient(at 82% 65%, hsl(215, 70%, 90%) 0, transparent 55%);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            background-color: #3b82f6;
+            color: white;
+        }   

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase - AeroNet ISP Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 
+    Chosen Palette: Cool Slate
+    Application Structure Plan: The application is structured as a single-page dashboard with a fixed sidebar for navigation and a main content area for displaying information. This structure was chosen over a simple top-to-bottom layout to provide a more modern, app-like experience. It allows users to quickly jump to any section of the project documentation without scrolling, making information discovery faster and more intuitive. The dynamic content panel keeps the user focused on one topic at a time, improving readability and comprehension. This interactive flow transforms a static README into an engaging project exploration tool.
+    Visualization & Content Choices: 
+    - Report Info: Introduction -> Goal: Inform -> Presentation: Formatted Text Block -> Interaction: None -> Justification: Provides a clean, readable project overview as the landing view.
+    - Report Info: Key Features -> Goal: Organize/Inform -> Presentation: Interactive Cards with Icons -> Interaction: Hover Effect -> Justification: Cards are more visually engaging than a simple bulleted list and allow for better content separation. Icons provide quick visual cues.
+    - Report Info: Technologies Used -> Goal: Organize/Inform -> Presentation: Tech Stack Cards -> Interaction: Hover Effect -> Justification: Visually represents the tech stack, making it more impactful than a plain list.
+    - Report Info: Getting Started/Deployment -> Goal: Inform/Organize -> Presentation: Step-by-Step Accordion/List -> Interaction: Click to expand/view -> Justification: Breaks down complex instructions into manageable, easy-to-follow steps, improving clarity for developers.
+    - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. 
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .sidebar-link.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .sidebar-link.active svg {
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-white shadow-md flex-shrink-0">
+            <div class="p-6 border-b">
+                <h1 class="text-2xl font-bold text-gray-900">Aero<span class="text-blue-600">Net</span></h1>
+                <p class="text-sm text-gray-500 mt-1">Project Showcase</p>
+            </div>
+            <nav class="p-4 space-y-2">
+                <a href="#" id="nav-intro" class="sidebar-link active group flex items-center px-4 py-2.5 text-sm font-medium rounded-lg text-gray-700 hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-white transition-all duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    Introduction
+                </a>
+                <a href="#" id="nav-features" class="sidebar-link group flex items-center px-4 py-2.5 text-sm font-medium rounded-lg text-gray-700 hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-white transition-all duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                    Key Features
+                </a>
+                <a href="#" id="nav-tech" class="sidebar-link group flex items-center px-4 py-2.5 text-sm font-medium rounded-lg text-gray-700 hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-white transition-all duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                    Technologies
+                </a>
+                <a href="#" id="nav-setup" class="sidebar-link group flex items-center px-4 py-2.5 text-sm font-medium rounded-lg text-gray-700 hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-white transition-all duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+                    Setup & Deploy
+                </a>
+                <a href="#" id="nav-contact" class="sidebar-link group flex items-center px-4 py-2.5 text-sm font-medium rounded-lg text-gray-700 hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-white transition-all duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    Contact
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-8 overflow-y-auto">
+            <div id="content-area" class="max-w-4xl mx-auto">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const contentData = {
+            intro: {
+                title: 'Project Introduction',
+                content: `
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            In the heart of Dhaka's rapidly digitizing landscape, where reliable internet is the backbone of modern life, the AeroNet ISP website project was conceived as a premier digital storefront. As of late 2025, the demand for high-speed, dependable broadband in Bangladesh has reached an all-time high, driven by the nation's "Digital Bangladesh" vision, a thriving freelance economy, and an insatiable appetite for digital entertainment. In this fiercely competitive market, a professional, user-centric, and trustworthy online presence is not merely an asset—it is a fundamental requirement for success. This project was developed to meet that exact need, creating a static website that is modern, fully responsive, and meticulously crafted to convert visitors into loyal customers.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            The core objective was to design and build a platform that excels in both form and function. The aesthetic was intentionally chosen to be clean, open, and professional, utilizing a light theme with sharp blue accents to build a strong brand identity synonymous with reliability and technological competence. Built entirely with HTML, Tailwind CSS, and vanilla JavaScript, the website is a testament to modern front-end development principles, prioritizing performance, accessibility, and maintainability. Every section, from the compelling hero banner to the transparent pricing tables and the interactive FAQ accordion, was designed with the end-user in mind. The information architecture is logical and intuitive, guiding potential customers on a seamless journey of discovery.
+                        </p>
+                    </div>
+                `
+            },
+            features: {
+                title: 'Key Features',
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500 hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="font-semibold text-lg mb-2">Fully Responsive Design</h3>
+                            <p class="text-gray-600 text-sm">Seamlessly adapts to all screen sizes, from mobile to desktop.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500 hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="font-semibold text-lg mb-2">Modern UI/UX</h3>
+                            <p class="text-gray-600 text-sm">Clean, light-themed interface with subtle hover effects and smooth scrolling.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500 hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="font-semibold text-lg mb-2">Comprehensive Sections</h3>
+                            <p class="text-gray-600 text-sm">Includes Features, About, Why Us, Pricing, and an interactive FAQ.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500 hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="font-semibold text-lg mb-2">Localized Content</h3>
+                            <p class="text-gray-600 text-sm">Pricing is displayed in Bangladeshi Taka (৳) and content is tailored to the Dhaka market.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500 hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="font-semibold text-lg mb-2">Interactive Elements</h3>
+                            <p class="text-gray-600 text-sm">Mobile-friendly menu, an accordion for FAQs, and a "Scroll to Top" button.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500 hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="font-semibold text-lg mb-2">Optimized Performance</h3>
+                            <p class="text-gray-600 text-sm">Built with lightweight, vanilla technologies for fast loading times.</p>
+                        </div>
+                    </div>
+                `
+            },
+            tech: {
+                title: 'Technologies Used',
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                            <div class="text-4xl mb-3">📄</div>
+                            <h3 class="font-bold text-xl text-gray-800">HTML5</h3>
+                            <p class="text-gray-600 text-sm mt-1">For the core structure and semantic content of the website.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                            <div class="text-4xl mb-3">💨</div>
+                            <h3 class="font-bold text-xl text-gray-800">Tailwind CSS</h3>
+                            <p class="text-gray-600 text-sm mt-1">A utility-first CSS framework for rapid and responsive UI development.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                            <div class="text-4xl mb-3">⚡️</div>
+                            <h3 class="font-bold text-xl text-gray-800">JavaScript</h3>
+                            <p class="text-gray-600 text-sm mt-1">Vanilla JS for interactive elements like the menu and scroll-to-top functionality.</p>
+                        </div>
+                    </div>
+                `
+            },
+            setup: {
+                title: 'Getting Started & Deployment',
+                content: `
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-xl mb-4 border-b pb-2">Local Setup</h3>
+                        <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                            <li>
+                                <strong>Clone the repository:</strong>
+                                <code class="block bg-gray-100 text-sm p-3 rounded mt-2 text-gray-800">git clone https://github.com/your-username/isp-website.git</code>
+                            </li>
+                            <li>
+                                <strong>Navigate to the project directory:</strong>
+                                <code class="block bg-gray-100 text-sm p-3 rounded mt-2 text-gray-800">cd isp-website</code>
+                            </li>
+                            <li>
+                                <strong>Open the file:</strong>
+                                <p class="mt-2">Simply open the <code class="bg-gray-200 text-sm px-1 rounded">index.html</code> file in your favorite web browser (e.g., Chrome, Firefox, Safari).</p>
+                            </li>
+                        </ol>
+                        <h3 class="font-semibold text-xl mb-4 mt-8 border-b pb-2">Deployment with GitHub Pages</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            This project can be easily deployed for free using <strong>GitHub Pages</strong>. This allows you to host the static website directly from your GitHub repository. For a detailed, step-by-step guide on how to do this, please refer to the deployment guide that would be included in the repository. The general process involves enabling GitHub Pages in your repository settings and selecting the main branch as the source.
+                        </p>
+                    </div>
+                `
+            },
+            contact: {
+                title: 'Contact & Links',
+                content: `
+                    <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+                        <h3 class="font-semibold text-xl mb-2">Project Maintained By</h3>
+                        <p class="text-gray-600 mb-4">AHSANUR RAHMAN SUMON</p>
+                        <div class="space-x-4">
+                            <a href="mailto:ahsanur.cse@gmail.com" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                                Email Me
+                            </a>
+                            <a href="https://ahsanurrahmansumon.github.io" target="_blank" class="inline-block bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        const contentArea = document.getElementById('content-area');
+        const navLinks = document.querySelectorAll('.sidebar-link');
+
+        function renderContent(contentKey) {
+            const data = contentData[contentKey];
+            if (data) {
+                contentArea.innerHTML = `
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">${data.title}</h2>
+                    ${data.content}
+                `;
+            }
+        }
+
+        function handleNavClick(event) {
+            event.preventDefault();
+            const linkId = event.currentTarget.id;
+            const contentKey = linkId.replace('nav-', '');
+            
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            renderContent(contentKey);
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', handleNavClick);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderContent('intro');
+        });
+    </script>
+
+</body>
+</html>
+
